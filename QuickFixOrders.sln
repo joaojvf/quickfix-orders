@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9C13730A-3A44-4EA6-9E19-C5605416EE47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B73217F5-919F-40CD-9DFE-34D867763DF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickFixOrders.OrderAccumulator", "src\QuickFixOrders.OrderAccumulator\QuickFixOrders.OrderAccumulator.csproj", "{F931DE74-C1CC-4419-A29F-AE27B729F36B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickFixOrders.OrderGenerator", "src\QuickFixOrders.OrderGenerator\QuickFixOrders.OrderGenerator.csproj", "{E6F19FBD-CCEC-48AB-B0E7-9049857026DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickFixOrders.Core", "src\QuickFixOrders.Core\QuickFixOrders.Core.csproj", "{48385F18-D08E-42D3-A319-3F898DB9EB37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickFixOrders.Data", "src\QuickFixOrders.Data\QuickFixOrders.Data.csproj", "{C700B63A-3CDB-4445-A3AF-A1FF70BBB67B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F931DE74-C1CC-4419-A29F-AE27B729F36B} = {9C13730A-3A44-4EA6-9E19-C5605416EE47}
+		{E6F19FBD-CCEC-48AB-B0E7-9049857026DA} = {9C13730A-3A44-4EA6-9E19-C5605416EE47}
+		{48385F18-D08E-42D3-A319-3F898DB9EB37} = {9C13730A-3A44-4EA6-9E19-C5605416EE47}
+		{C700B63A-3CDB-4445-A3AF-A1FF70BBB67B} = {9C13730A-3A44-4EA6-9E19-C5605416EE47}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F931DE74-C1CC-4419-A29F-AE27B729F36B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F931DE74-C1CC-4419-A29F-AE27B729F36B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F931DE74-C1CC-4419-A29F-AE27B729F36B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F931DE74-C1CC-4419-A29F-AE27B729F36B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6F19FBD-CCEC-48AB-B0E7-9049857026DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6F19FBD-CCEC-48AB-B0E7-9049857026DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6F19FBD-CCEC-48AB-B0E7-9049857026DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6F19FBD-CCEC-48AB-B0E7-9049857026DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48385F18-D08E-42D3-A319-3F898DB9EB37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48385F18-D08E-42D3-A319-3F898DB9EB37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48385F18-D08E-42D3-A319-3F898DB9EB37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48385F18-D08E-42D3-A319-3F898DB9EB37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C700B63A-3CDB-4445-A3AF-A1FF70BBB67B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C700B63A-3CDB-4445-A3AF-A1FF70BBB67B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C700B63A-3CDB-4445-A3AF-A1FF70BBB67B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C700B63A-3CDB-4445-A3AF-A1FF70BBB67B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
