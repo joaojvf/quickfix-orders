@@ -1,27 +1,32 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9C13730A-3A44-4EA6-9E19-C5605416EE47}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B73217F5-919F-40CD-9DFE-34D867763DF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickFixOrders.OrderAccumulator", "src\QuickFixOrders.OrderAccumulator\QuickFixOrders.OrderAccumulator.csproj", "{F931DE74-C1CC-4419-A29F-AE27B729F36B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickFixOrders.OrderAccumulator", "src\QuickFixOrders.OrderAccumulator\QuickFixOrders.OrderAccumulator.csproj", "{F931DE74-C1CC-4419-A29F-AE27B729F36B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickFixOrders.OrderGenerator", "src\QuickFixOrders.OrderGenerator\QuickFixOrders.OrderGenerator.csproj", "{E6F19FBD-CCEC-48AB-B0E7-9049857026DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickFixOrders.OrderGenerator", "src\QuickFixOrders.OrderGenerator\QuickFixOrders.OrderGenerator.csproj", "{E6F19FBD-CCEC-48AB-B0E7-9049857026DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickFixOrders.Core", "src\QuickFixOrders.Core\QuickFixOrders.Core.csproj", "{48385F18-D08E-42D3-A319-3F898DB9EB37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickFixOrders.Core", "src\QuickFixOrders.Core\QuickFixOrders.Core.csproj", "{48385F18-D08E-42D3-A319-3F898DB9EB37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickFixOrders.Data", "src\QuickFixOrders.Data\QuickFixOrders.Data.csproj", "{C700B63A-3CDB-4445-A3AF-A1FF70BBB67B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickFixOrders.Data", "src\QuickFixOrders.Data\QuickFixOrders.Data.csproj", "{C700B63A-3CDB-4445-A3AF-A1FF70BBB67B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickFixOrders.Core.Tests", "tests\QuickFixOrders.Core.Tests\QuickFixOrders.Core.Tests.csproj", "{96B363BC-9185-4933-8C5C-A795B4422DF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickFixOrders.OrderAccumulator.Tests", "tests\QuickFixOrders.OrderAccumulator.Tests\QuickFixOrders.OrderAccumulator.Tests.csproj", "{6ABE8C72-B7D0-48F5-BA47-597C344A8C69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickFixOrders.OrderGenerator.Tests", "tests\QuickFixOrders.OrderGenerator.Tests\QuickFixOrders.OrderGenerator.Tests.csproj", "{CFC1C7B2-08AB-4225-B24E-9DACCA159B70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickFixOrders.Data.Tests", "tests\QuickFixOrders.Data.Tests\QuickFixOrders.Data.Tests.csproj", "{0E27CBC8-426E-432B-AC5E-C66BA1DC694E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{F931DE74-C1CC-4419-A29F-AE27B729F36B} = {9C13730A-3A44-4EA6-9E19-C5605416EE47}
-		{E6F19FBD-CCEC-48AB-B0E7-9049857026DA} = {9C13730A-3A44-4EA6-9E19-C5605416EE47}
-		{48385F18-D08E-42D3-A319-3F898DB9EB37} = {9C13730A-3A44-4EA6-9E19-C5605416EE47}
-		{C700B63A-3CDB-4445-A3AF-A1FF70BBB67B} = {9C13730A-3A44-4EA6-9E19-C5605416EE47}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F931DE74-C1CC-4419-A29F-AE27B729F36B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -40,5 +45,37 @@ Global
 		{C700B63A-3CDB-4445-A3AF-A1FF70BBB67B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C700B63A-3CDB-4445-A3AF-A1FF70BBB67B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C700B63A-3CDB-4445-A3AF-A1FF70BBB67B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96B363BC-9185-4933-8C5C-A795B4422DF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96B363BC-9185-4933-8C5C-A795B4422DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96B363BC-9185-4933-8C5C-A795B4422DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96B363BC-9185-4933-8C5C-A795B4422DF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ABE8C72-B7D0-48F5-BA47-597C344A8C69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ABE8C72-B7D0-48F5-BA47-597C344A8C69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ABE8C72-B7D0-48F5-BA47-597C344A8C69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ABE8C72-B7D0-48F5-BA47-597C344A8C69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFC1C7B2-08AB-4225-B24E-9DACCA159B70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFC1C7B2-08AB-4225-B24E-9DACCA159B70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFC1C7B2-08AB-4225-B24E-9DACCA159B70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFC1C7B2-08AB-4225-B24E-9DACCA159B70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E27CBC8-426E-432B-AC5E-C66BA1DC694E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E27CBC8-426E-432B-AC5E-C66BA1DC694E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E27CBC8-426E-432B-AC5E-C66BA1DC694E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E27CBC8-426E-432B-AC5E-C66BA1DC694E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F931DE74-C1CC-4419-A29F-AE27B729F36B} = {9C13730A-3A44-4EA6-9E19-C5605416EE47}
+		{E6F19FBD-CCEC-48AB-B0E7-9049857026DA} = {9C13730A-3A44-4EA6-9E19-C5605416EE47}
+		{48385F18-D08E-42D3-A319-3F898DB9EB37} = {9C13730A-3A44-4EA6-9E19-C5605416EE47}
+		{C700B63A-3CDB-4445-A3AF-A1FF70BBB67B} = {9C13730A-3A44-4EA6-9E19-C5605416EE47}
+		{96B363BC-9185-4933-8C5C-A795B4422DF4} = {B73217F5-919F-40CD-9DFE-34D867763DF3}
+		{6ABE8C72-B7D0-48F5-BA47-597C344A8C69} = {B73217F5-919F-40CD-9DFE-34D867763DF3}
+		{CFC1C7B2-08AB-4225-B24E-9DACCA159B70} = {B73217F5-919F-40CD-9DFE-34D867763DF3}
+		{0E27CBC8-426E-432B-AC5E-C66BA1DC694E} = {B73217F5-919F-40CD-9DFE-34D867763DF3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {283E5385-5B19-4EC3-80B3-15DDB172EB62}
 	EndGlobalSection
 EndGlobal

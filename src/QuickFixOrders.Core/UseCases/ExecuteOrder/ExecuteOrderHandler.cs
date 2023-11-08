@@ -15,60 +15,66 @@ public class ExecuteOrderHandler : IExecuteOrderHandler
 
     public ExecuteOrderResponse Handle(ExecuteOrderRequest request)
     {
-        var order = this._stockRepository.GetStockBySymbol(request.OrderSingle.Symbol.getValue());
+        var stock = this._stockRepository.GetStockBySymbol(request.OrderSingle.Symbol.getValue());
 
-        if (order is null)
+        if (stock is null)
         {
             return new ExecuteOrderResponse(false);
         }
 
         var price = request.OrderSingle.Price.getValue();
         var quantity = Convert.ToInt32(request.OrderSingle.OrderQty.getValue());
-        var totalToExecute = price * quantity;
+        var totalToExecute = GetTotalValue(price, quantity);
 
         return request.OrderSingle.Side.getValue() switch
         {
-            Side.BUY => this.ExecuteBuy(order, totalToExecute),
-            Side.SELL => this.ExecuteSell(order, totalToExecute),
+            Side.BUY => this.ExecuteBuy(stock, totalToExecute),
+            Side.SELL => this.ExecuteSell(stock, totalToExecute),
             _ => new ExecuteOrderResponse(false)
         };
     }
 
-    private ExecuteOrderResponse ExecuteSell(Stock order, decimal totalToExecute)
-    {
-        var newFinancialExposition = Calc();
-        order.FinancialExposition = newFinancialExposition;
-
-        this._stockRepository.SaveChanges();
-        return new ExecuteOrderResponse(true);
-
-        decimal Calc()
-        {
-            return order.FinancialExposition - totalToExecute;
-        }
-    }
-
-    private ExecuteOrderResponse ExecuteBuy(Stock order, decimal totalToExecute)
+    private ExecuteOrderResponse ExecuteSell(Stock stock, decimal totalToExecute)
     {
         var newFinancialExposition = Calc();
 
-        if (!IsExecutable(order, newFinancialExposition))
+        if (!SellExecutable(stock, newFinancialExposition))
         {
             return new ExecuteOrderResponse(false);
         }
 
-        order.FinancialExposition = newFinancialExposition;
+        stock.FinancialExposition = newFinancialExposition;
         this._stockRepository.SaveChanges();
         return new ExecuteOrderResponse(true);
 
         decimal Calc()
         {
-            return order.FinancialExposition + totalToExecute;
+            return stock.FinancialExposition - totalToExecute;
         }
     }
 
-    private bool IsExecutable(Stock order, decimal newFinancialExposition)
+    private ExecuteOrderResponse ExecuteBuy(Stock stock, decimal totalToExecute)
     {
-        return newFinancialExposition + order.FinancialExposition <= order.FinancialExpositionLimit;
+
+        var newFinancialExposition = Calc();
+        if (!BuyExecutable(stock, newFinancialExposition))
+        {
+            return new ExecuteOrderResponse(false);
+        }
+
+        stock.FinancialExposition = newFinancialExposition;
+        this._stockRepository.SaveChanges();
+        return new ExecuteOrderResponse(true);
+
+        decimal Calc()
+        {
+            return stock.FinancialExposition + totalToExecute;
+        }
     }
+
+    private bool BuyExecutable(Stock stock, decimal newFinancialExposition) => newFinancialExposition <= stock.FinancialExpositionBuyLimit;
+
+    private bool SellExecutable(Stock stock, decimal newFinancialExposition) => newFinancialExposition >= stock.FinancialExpositionSellLimit;
+
+    private decimal GetTotalValue(decimal price, int quantity) => price * quantity;
 }

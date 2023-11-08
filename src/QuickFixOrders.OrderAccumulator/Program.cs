@@ -11,11 +11,11 @@ var combinedPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "orderAcc
 var app =Host.CreateDefaultBuilder()
     .ConfigureServices((context, services) =>
     {
-        services.AddCore();
-        services.AddData();
+        services.AddDependencyInjectionCore();
+        services.AddDependencyInjectionData();
         services.AddSingleton<OrderAccumulator>();
     }).Build();
-QuickFixOrders.Data.DependencyInjection.AddInitialData(app.Services.GetRequiredService<DataContext>());
+QuickFixOrders.Data.Setup.AddInitialData(app.Services.GetRequiredService<DataContext>());
 
 try
 {

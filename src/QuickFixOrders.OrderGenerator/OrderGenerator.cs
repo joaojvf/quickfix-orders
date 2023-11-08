@@ -55,7 +55,7 @@ public class OrderGenerator : MessageCracker, IApplication
 
     private string GetRandomSymbol()
     {
-        var arrayPosition = this._random.Next(0, EnabledSymbols.Length - 1);
+        var arrayPosition = this._random.Next(0, EnabledSymbols.Length);
         return EnabledSymbols[arrayPosition];
     }
 
