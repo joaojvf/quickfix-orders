@@ -21,7 +21,14 @@
         </ContentWithTargetPath>
     </ItemGroup>
 
-    <ItemGroup>
+	<ItemGroup>
+		<ContentWithTargetPath Include="..\..\specs\FIX44.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TargetPath>%(Filename)%(Extension)</TargetPath>
+		</ContentWithTargetPath>
+	</ItemGroup>
+
+	<ItemGroup>
       <ProjectReference Include="..\QuickFixOrders.Core\QuickFixOrders.Core.csproj" />
       <ProjectReference Include="..\QuickFixOrders.Data\QuickFixOrders.Data.csproj" />
     </ItemGroup>
