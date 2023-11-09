@@ -1,6 +1,7 @@
 namespace QuickFixOrders.OrderGenerator;
 
 using QuickFix;
+using QuickFix.Fields;
 using QuickFixOrders.Core.Constants;
 using QuickFixOrders.OrderGenerator.Factories;
 using Message = QuickFix.Message;
@@ -40,7 +41,7 @@ public class OrderGenerator : MessageCracker, IApplication
 
     public void OnMessage(QuickFix.FIX44.ExecutionReport m, SessionID s)
     {
-        Console.WriteLine($"OrderGenerator - Execution Report: {m.ExecID}, OrderId: {m.OrderID}, Symbol: {m.Symbol}, Status: {m.OrdStatus}.");
+        Console.WriteLine($"OrderGenerator - Execution Report: {m.ExecID}, OrderId: {m.OrderID}, Side: {m.Side}, Symbol: {m.Symbol}, Status: {m.OrdStatus}.");
     }
 
     public void Run()
@@ -48,6 +49,9 @@ public class OrderGenerator : MessageCracker, IApplication
         while (true)
         {
             var order = OrderFactory.CreateOrder44(GetRandomSymbol());
+
+            Console.WriteLine($"OrderGenerator - Sending Order: OrderId: {order.ClOrdID}, Side: {order.Side}, Symbol: {order.Symbol}, Quantity: {order.OrderQty}, Price: {order.Price},  Total to Execute: {order.Price.getValue() * order.OrderQty.getValue()}.");
+
             Session.SendToTarget(order, this._session.SessionID);
             WaitForInterval();
         }

@@ -1,6 +1,7 @@
 namespace QuickFixOrders.OrderAccumulator;
 
 using QuickFix;
+using QuickFix.Fields;
 using QuickFixOrders.Core.UseCases.ExecuteOrder;
 using Message = QuickFix.Message;
 
@@ -29,6 +30,8 @@ public class OrderAccumulator : MessageCracker, IApplication
     {
         try
         {
+            Console.WriteLine($"OrderAccumulator - Received Order: OrderId: {newOrderSingle.ClOrdID}, Side: {newOrderSingle.Side}, Symbol: {newOrderSingle.Symbol}, Quantity: {newOrderSingle.OrderQty}, Price: {newOrderSingle.Price},  Total to Execute: {newOrderSingle.Price.getValue() * newOrderSingle.OrderQty.getValue()}.");
+
             var response = this._executeOrderHandler.Handle(new ExecuteOrderRequest(newOrderSingle));
             var message = ExecutionReportFactory.CreateExecutionReport44(newOrderSingle, response.Executed);
             Session.SendToTarget(message, s);
