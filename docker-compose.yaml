@@ -1,0 +1,32 @@
+version: "3.9"
+
+networks:
+  quickfix:
+
+services:
+  quickfix-orders-accumulator:
+    container_name: quickfix-orders-accumulator
+    image: quickfix-orders-accumulator:1.0
+    build:
+      context: .
+      dockerfile: src/QuickFixOrders.OrderAccumulator/Dockerfile
+    ports:
+      - 5080:5080       
+      - 5001:5001
+    expose:
+      - 5080
+      - 5001
+    networks:
+      - quickfix         
+
+  quickfix-orders-generator:
+    container_name: quickfix-orders-generator
+    image: quickfix-orders-generator:1.0
+    build:
+      context: .
+      dockerfile: src/QuickFixOrders.OrderGenerator/Dockerfile
+    networks:
+      - quickfix       
+    depends_on:
+      - quickfix-orders-accumulator
+

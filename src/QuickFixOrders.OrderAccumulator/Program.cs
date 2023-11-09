@@ -10,7 +10,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        const string httpServerPrefix = "http://127.0.0.1:5080/";
+        const string httpServerPrefix = "http://quickfix-orders-accumulator:5080/";
         var combinedPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "orderAccumulator.cfg");
         var app = Host.CreateDefaultBuilder()
             .ConfigureServices((context, services) =>
